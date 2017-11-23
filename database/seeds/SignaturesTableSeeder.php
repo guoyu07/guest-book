@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Signature;
 
-class DatabaseSeeder extends Seeder
+class SignaturesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(SignaturesTableSeeder::class);
+        Signature::truncate();
+
+        factory(Signature::class, 500)->create();
     }
 }
